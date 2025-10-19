@@ -1,0 +1,103 @@
+.projects-section {
+  padding: 5rem 0;
+  background-color: white;
+}
+
+.projects-section__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.projects-section__header {
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.projects-section__title {
+  font-size: 45px;
+  font-weight: 400;
+  color: #b70c1c;
+  margin: 0 0 20px 0;
+  font-family: "WindSong", cursive;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.projects-section__subtitle {
+  color: #333;
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+}
+
+.projects-section__description {
+  color: #666;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.projects-section__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+@media (max-width: 1024px) {
+  .projects-section__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .projects-section__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-section__title {
+    font-size: 2rem;
+  }
+
+  .projects-section__subtitle {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .projectssection__wrapper__main {
+    padding: 60px 0;
+  }
+
+  .projectssection__grid__projects {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projectssection__container__content {
+    padding: 0 20px;
+  }
+
+  .projectssection__header {
+    margin-bottom: 40px;
+  }
+
+  .projectssection__title {
+    font-size: 28px;
+  }
+
+  .projectssection__grid__projects {
+    grid-template-columns: 1fr;
+  }
+}
+.projectssection__grid__projects {
+  grid-template-columns: 1fr;
+}

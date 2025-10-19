@@ -1,0 +1,88 @@
+.servicecard__wrapper__container {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.servicecard__wrapper__container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Image at the top */
+.servicecard__image__container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: #e0e0e0;
+}
+
+.servicecard__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.servicecard__wrapper__container:hover .servicecard__image {
+  transform: scale(1.05);
+}
+
+/* Remove icon styles - not needed anymore */
+.servicecard__icon {
+  display: none;
+}
+
+.servicecard__content__block {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+.servicecard__title__heading {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.servicecard__description__text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #666;
+  margin: 0;
+  flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+  .servicecard__image__container {
+    height: 180px;
+  }
+
+  .servicecard__content__block {
+    padding: 20px 18px;
+  }
+
+  .servicecard__title__heading {
+    font-size: 17px;
+  }
+
+  .servicecard__description__text {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .servicecard__image__container {
+    height: 200px;
+  }
+}

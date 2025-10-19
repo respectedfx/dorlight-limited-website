@@ -1,0 +1,29 @@
+.stats-section {
+  background-color: #d9d9d980;
+  width: 100%;
+}
+
+.stats-section__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.stats-section__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  justify-items: center;
+}
+
+@media (max-width: 968px) {
+  .statssection__grid__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .statssection__grid__stats {
+    grid-template-columns: 1fr;
+  }
+}

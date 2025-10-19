@@ -1,0 +1,117 @@
+.servicessection__wrapper__main {
+  padding: 40px 0;
+  background-color: #fff;
+}
+
+.servicessection__container__content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.servicessection__header {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.servicessection__subtitle {
+  font-size: 45px;
+  font-weight: 400;
+  color: #b70c1c;
+  margin: 0 0 20px 0;
+  font-family: "WindSong", cursive;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.servicessection__grid__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* Stats Section - Missing from original */
+.servicessection__stats__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 40px 0;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 20px;
+}
+
+.servicessection__stat__item {
+  text-align: center;
+  padding: 20px;
+}
+
+.servicessection__stat__number {
+  font-size: 48px;
+  font-weight: 700;
+  color: #b70c1c;
+  margin-bottom: 8px;
+  font-family: Arial, sans-serif;
+  line-height: 1;
+}
+
+.servicessection__stat__label {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .servicessection__grid__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .servicessection__wrapper__main {
+    padding: 60px 0;
+  }
+
+  .servicessection__container__content {
+    padding: 0 20px;
+  }
+
+  .servicessection__header {
+    margin-bottom: 40px;
+  }
+
+  .servicessection__subtitle {
+    font-size: 36px;
+  }
+
+  .servicessection__grid__cards {
+    gap: 25px;
+  }
+
+  .servicessection__stats__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .servicessection__stat__number {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .servicessection__grid__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .servicessection__subtitle {
+    font-size: 32px;
+  }
+
+  .servicessection__stats__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

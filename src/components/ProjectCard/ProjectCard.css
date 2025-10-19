@@ -1,0 +1,135 @@
+.project-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: #f8f8f8;
+}
+
+.project-card__image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.project-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+}
+
+.project-card__content {
+  text-align: left;
+  width: 100%;
+}
+
+.project-card__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+}
+
+.project-card__subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+  color: #002b5b;
+  border: none;
+  padding: 12px 30px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.projectcard__button__view:hover {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.projectcard__content__block {
+  padding: 25px;
+}
+
+.projectcard__title__heading {
+  font-size: 22px;
+  font-weight: 600;
+  color: #002b5b;
+  margin: 0 0 20px 0;
+}
+
+.projectcard__details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.projectcard__detail__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.projectcard__detail__icon {
+  font-size: 16px;
+}
+
+.projectcard__detail__text {
+  color: #666;
+  font-size: 15px;
+}
+
+.projectcard__price {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.projectcard__price__amount {
+  color: #002b5b;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .projectcard__image__wrapper {
+    height: 250px;
+  }
+}
+
+.projectcard__button__view:hover {
+  transform: scale(1.05);
+}
+
+.projectcard__content__block {
+  padding: 20px;
+}
+
+.projectcard__title__heading {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.projectcard__subtitle__text {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}

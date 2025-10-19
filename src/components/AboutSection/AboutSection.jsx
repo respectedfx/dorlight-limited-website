@@ -1,0 +1,128 @@
+import React from "react";
+import "./AboutSection.css";
+
+const AboutSection = () => {
+  return (
+    <section className="aboutsection__wrapper__main" id="about">
+      <div className="aboutsection__container__content">
+        <h2 className="aboutsection__heading__welcome">Welcome Home</h2>
+
+        <div className="aboutsection__grid__twocolumn">
+          <div className="aboutsection__image__container">
+            <img
+              src="/assets/about_us_img.jpg"
+              alt="Modern building architecture"
+              className="aboutsection__image__featured"
+            />
+          </div>
+
+          <div className="aboutsection__content__textblock">
+            <h3 className="aboutsection__title__aboutus">About Us</h3>
+            <p className="aboutsection__paragraph__description">
+              At Dorlight Limited, we are committed to redefining real estate in
+              Nigeria by delivering sustainable, innovative, and
+              customer-focused property solutions. Established with a vision to
+              bridge the gap between modern living and affordability, we
+              specialize in property development, sales, leasing, and real
+              estate investment advisory services.
+            </p>
+            <p className="aboutsection__paragraph__description">
+              Our team combines deep industry expertise with a passion for
+              excellence, ensuring that every project we undertake meets the
+              highest standards of quality, transparency, and value. From
+              residential estates to commercial developments, we design and
+              deliver properties that reflect functionality, comfort, and
+              long-term investment potential.
+            </p>
+          </div>
+        </div>
+
+        <div className="aboutsection__vision__block">
+          <h4 className="aboutsection__subtitle__vision">Our Vision</h4>
+          <p className="aboutsection__text__visionmission">
+            To emerge the gap between modern living and community while
+            providing remarkable value through premium real estate development.
+          </p>
+        </div>
+
+        <div className="aboutsection__mission__block">
+          <h4 className="aboutsection__subtitle__mission">Our Mission</h4>
+          <p className="aboutsection__text__visionmission">
+            We are committed to empowering our clients with transparency and
+            integrity, ensuring they enjoy the best property development. Our
+            goal is to go beyond standards, build trust, and make the dream of
+            owning beautiful real estate a reality for all.
+          </p>
+        </div>
+      </div>
+
+      {/* Core Values Section */}
+      <div className="aboutsection__corevalues__section">
+        <div className="aboutsection__corevalues__bg">
+          <div className="aboutsection__corevalues__overlay"></div>
+          <div className="aboutsection__corevalues__content">
+            <h3 className="aboutsection__corevalues__title">Our Core Values</h3>
+            <div className="aboutsection__corevalues__list">
+              <span className="aboutsection__corevalue__item">
+                I — Integrity
+              </span>
+              <span className="aboutsection__corevalue__divider">|</span>
+              <span className="aboutsection__corevalue__item">
+                P — Professionalism
+              </span>
+              <span className="aboutsection__corevalue__divider">|</span>
+              <span className="aboutsection__corevalue__item">
+                E — Excellence
+              </span>
+              <span className="aboutsection__corevalue__divider">|</span>
+              <span className="aboutsection__corevalue__item">
+                A — Accountability
+              </span>
+              <span className="aboutsection__corevalue__divider">|</span>
+              <span className="aboutsection__corevalue__item">
+                S — Sustainability
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Quote Section */}
+      <div className="aboutsection__quote__section">
+        <div className="aboutsection__quote__grid">
+          <div className="aboutsection__quote__image">
+            <img
+              src="/assets/anatolli.jpg"
+              alt="Anatolli Dorosh"
+              className="aboutsection__chairman__image"
+            />
+            <div className="aboutsection__chairman__text">
+              <p className="aboutsection__chairman__label">
+                Mr. xxxxxxxxxxxxxxxxxxxxxx
+              </p>
+              <p className="aboutsection__chairman__label">
+                Chairman DORLIGHT LTD
+              </p>
+            </div>
+          </div>
+          <div className="aboutsection__quote_content_container">
+            <div className="aboutsection__quote__content">
+              <p className="aboutsection__quote__text">
+                Be A Part Of Our Journey To Achieve Excellence
+              </p>
+              <p className="aboutsection__quote__description">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+                penatibus et magnis dis parturient montes, nascetur ridiculus
+                mus.
+              </p>
+              <button className="aboutsection__quote__button">View Bio</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutSection;

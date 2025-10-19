@@ -1,0 +1,118 @@
+.herosection__mainwrapper__background {
+  position: relative;
+  height: 100vh;
+  background-image: url("/assets/hero-section.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 80px;
+}
+
+.herosection__overlay__dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.502);
+}
+
+.herosection__content__centered {
+  position: relative;
+  z-index: 1;
+  color: white;
+  padding: 0 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.herosection__title__main {
+  font-size: 75px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  margin-bottom: 24px;
+}
+
+.herosection__title__subtitle {
+  font-size: 22px;
+  line-height: 1.6;
+  font-weight: 400;
+  /* max-width: 600px; */
+  margin: 0 0 40px 0;
+}
+
+.herosection__buttons__container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.herosection__button__primary {
+  background-color: #002b5b;
+  color: white;
+  padding: 15px 32px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  border: 2px solid #002b5b;
+}
+
+.herosection__button__primary:hover {
+  background-color: #1e56aa;
+  border-color: #1e56aa;
+}
+
+.herosection__button__secondary {
+  background-color: transparent;
+  color: white;
+  padding: 15px 32px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  border: 2px solid white;
+}
+
+.herosection__button__secondary:hover {
+  background-color: white;
+  color: #002b5b;
+}
+
+@media (max-width: 768px) {
+  .herosection__title__main {
+    font-size: 42px;
+  }
+
+  .herosection__title__subtitle {
+    font-size: 18px;
+  }
+
+  .herosection__buttons__container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .herosection__button__primary,
+  .herosection__button__secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .herosection__content__centered {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .herosection__title__main {
+    font-size: 32px;
+  }
+}
