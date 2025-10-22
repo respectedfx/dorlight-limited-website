@@ -4,10 +4,10 @@ import StatCard from "../StatCard/StatCard";
 
 const StatsSection = () => {
   const stats = [
-    { icon: "totalArea", value: "560+", label: "Total Area Sq" },
-    { icon: "apartments", value: "560+", label: "Apartments Sold" },
-    { icon: "constructions", value: "560+", label: "Total Constructions" },
-    { icon: "rooms", value: "300+", label: "Apartio Rooms" },
+    { icon: "totalArea", value: "560+", label: "Developed Land Area" },
+    { icon: "apartments", value: "560+", label: "Luxury Apartments Delivered" },
+    { icon: "constructions", value: "560+", label: "Completed Projects" },
+    { icon: "rooms", value: "300+", label: "Serviced Apartments" },
   ];
 
   return (

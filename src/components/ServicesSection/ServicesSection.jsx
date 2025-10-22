@@ -11,7 +11,7 @@ const ServicesSection = () => {
         "We design, construct, and deliver high-quality residential and commercial properties that combine functionality, durability, and aesthetic appeal. From modern housing estates and gated communities to mixed-use developments and office complexes.",
     },
     {
-      image: "/assets/services/property-sales.jpg",
+      image: "/assets/services/property-sales-marketing.jpg",
       title: "Property Sales & Marketing",
       description:
         "Our sales and marketing team bridges the gap between property buyers and sellers, ensuring smooth and profitable transactions. We provide tailored marketing strategies that give properties the right visibility, connecting them with qualified buyers and investors.",
@@ -35,7 +35,7 @@ const ServicesSection = () => {
         "Acquiring land in Nigeria can be complex, but we simplify the process for our clients. We provide secure land acquisition services, verification of titles, and documentation support. Whether for residential, commercial, we ensure clients obtain legally recognized ownership.",
     },
     {
-      image: "/assets/services/consultancy.jpg",
+      image: "/assets/services/consultancy-valuation.jpg",
       title: "Consultancy & Valuation Service",
       description:
         "We provide expert consultancy services covering property valuation, feasibility studies and professional advice on real estate transactions. Whether for individual buyers, developers, or financial institutions, our valuation services are conducted with accuracy and transparency",

@@ -5,23 +5,23 @@ import ProjectCard from "../ProjectCard/ProjectCard";
 const ProjectsSection = () => {
   const projects = [
     {
-      image: "/assets/paramount-oak.jpg",
-      title: "Paramount Oak",
+      image: "/assets/images/sterling-groove.jpg",
+      title: "The Sterling Groove",
       subtitle: "4-Bedroom Terrace",
     },
     {
-      image: "/assets/imperial-emerald.jpg",
-      title: "Imperial Emerald",
+      image: "/assets/images/marquis-court.jpg",
+      title: "The Marquis Court",
       subtitle: "4-Bedroom Terrace",
     },
     {
-      image: "/assets/luke-place.jpg",
-      title: "Luke Place",
+      image: "/assets/images/arden-place.jpg",
+      title: "Arden Place",
       subtitle: "4-Bedroom Terrace",
     },
     {
-      image: "/assets/lake-residence.jpg",
-      title: "Lake Residence",
+      image: "/assets/images/aqua-vista-residences.jpg",
+      title: "Aqua Vista Residences",
       subtitle: "4-Bedroom Terrace",
     },
   ];

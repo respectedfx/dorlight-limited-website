@@ -28,7 +28,7 @@ const ContactSection = () => {
         <h2 className="contactsection__title">Contact Us</h2>
 
         <div className="contactsection__image">
-          <img src="/assets/image_contact.png" alt="Contact Us" />
+          <img src="/assets/images/contact-us.jpg" alt="Contact Us" />
         </div>
 
         <div className="contactsection__grid__layout">
