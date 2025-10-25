@@ -4,7 +4,7 @@ import ServicesSection from "../components/ServicesSection/ServicesSection";
 import StatsSection from "../components/StatsSection/StatsSection";
 import ProjectsSection from "../components/ProjectsSection/ProjectsSection";
 import ContactSection from "../components/ContactSection/ContactSection";
-import NewsletterSection from "../components/NewsletterSection/NewsletterSection";
+// import NewsletterSection from "../components/NewsletterSection/NewsletterSection";
 
 const Home = () => {
   return (
@@ -15,7 +15,7 @@ const Home = () => {
       <StatsSection />
       <ProjectsSection />
       <ContactSection />
-      <NewsletterSection />
+      {/* <NewsletterSection /> */}
     </>
   );
 };

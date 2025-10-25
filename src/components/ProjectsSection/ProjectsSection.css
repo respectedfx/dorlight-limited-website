@@ -51,6 +51,21 @@
   margin-top: 3rem;
 }
 
+.projects-section__header {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.projects-section__header.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projects-section__grid.animate .project-card {
+  animation: fadeInUp 0.7s ease forwards;
+}
+
 @media (max-width: 1024px) {
   .projects-section__grid {
     grid-template-columns: repeat(2, 1fr);

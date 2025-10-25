@@ -1,22 +1,20 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useGalleryImages } from "../hooks/useGalleryImages";
+import { urlFor } from "../sanity/client";
 import "./Gallery.css";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [loadedImages, setLoadedImages] = useState(new Set());
+  const { images, loading, error } = useGalleryImages();
   const observerRef = useRef();
   const imagesPerPage = 20;
 
-  const galleryImages = Array.from({ length: 150 }, (_, i) => ({
-    id: i + 1,
-    src: `/assets/gallery/image${i + 1}.jpg`,
-    alt: `Gallery image ${i + 1}`,
-  }));
-
-  const totalPages = Math.ceil(galleryImages.length / imagesPerPage);
+  const totalPages = Math.ceil(images.length / imagesPerPage);
   const startIndex = (currentPage - 1) * imagesPerPage;
   const endIndex = startIndex + imagesPerPage;
-  const paginatedImages = galleryImages.slice(startIndex, endIndex);
+  const paginatedImages = images.slice(startIndex, endIndex);
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(
@@ -43,12 +41,19 @@ const Gallery = () => {
   }, []);
 
   useEffect(() => {
-    const images = document.querySelectorAll(".gallery__image[data-src]");
-    images.forEach((img) => {
+    const galleryImages = document.querySelectorAll(
+      ".gallery__image[data-src]"
+    );
+    galleryImages.forEach((img) => {
       if (observerRef.current) {
         observerRef.current.observe(img);
       }
     });
+  }, [currentPage, paginatedImages]);
+
+  // Reset loaded images when page changes
+  useEffect(() => {
+    setLoadedImages(new Set());
   }, [currentPage]);
 
   const handleImageClick = (image) => {
@@ -66,6 +71,58 @@ const Gallery = () => {
     }
   };
 
+  const handleImageLoad = (imageId) => {
+    setLoadedImages((prev) => new Set(prev).add(imageId));
+  };
+
+  // Show loading state with skeletons
+  if (loading) {
+    return (
+      <div className="gallery__page">
+        <section className="gallery__hero">
+          <div className="gallery__hero__overlay"></div>
+          <div className="gallery__hero__content">
+            <h1 className="gallery__hero__title">Our Gallery</h1>
+          </div>
+        </section>
+        <div className="gallery__container">
+          <div className="gallery__grid">
+            {Array.from({ length: 12 }).map((_, i) => (
+              <div key={i} className="gallery__item gallery__skeleton">
+                <div className="skeleton__image"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Show error state
+  if (error) {
+    return (
+      <div className="gallery__page">
+        <section className="gallery__hero">
+          <div className="gallery__hero__overlay"></div>
+          <div className="gallery__hero__content">
+            <h1 className="gallery__hero__title">Our Gallery</h1>
+          </div>
+        </section>
+        <div className="gallery__container">
+          <div className="gallery__error">
+            <p className="gallery__error__message">Error loading images</p>
+            <button
+              className="gallery__error__retry"
+              onClick={() => window.location.reload()}
+            >
+              Retry
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="gallery__page">
       {/* Hero Section */}
@@ -79,50 +136,66 @@ const Gallery = () => {
       {/* Gallery Grid */}
       <div className="gallery__container">
         <div className="gallery__grid">
-          {paginatedImages.map((image) => (
-            <div
-              key={image.id}
-              className="gallery__item"
-              onClick={() => handleImageClick(image)}
-            >
-              <img
-                data-src={image.src}
-                alt={image.alt}
-                className="gallery__image"
-                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                onError={(e) => {
-                  e.target.src = `https://via.placeholder.com/400x400/4a90e2/ffffff?text=Image+${image.id}`;
-                }}
-              />
-              <div className="gallery__overlay">
-                <span className="gallery__view">View</span>
+          {paginatedImages.map((image) => {
+            const imageUrl = urlFor(image.image).width(800).height(600).url();
+            const isLoaded = loadedImages.has(image._id);
+
+            return (
+              <div
+                key={image._id}
+                className="gallery__item"
+                onClick={() => handleImageClick(image)}
+              >
+                {!isLoaded && (
+                  <div className="gallery__skeleton">
+                    <div className="skeleton__image"></div>
+                  </div>
+                )}
+                <img
+                  data-src={imageUrl}
+                  alt={image.alt}
+                  className={`gallery__image ${isLoaded ? "loaded" : ""}`}
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  onLoad={() => handleImageLoad(image._id)}
+                  onError={(e) => {
+                    e.target.src = `https://via.placeholder.com/400x400/4a90e2/ffffff?text=${encodeURIComponent(
+                      image.title
+                    )}`;
+                    handleImageLoad(image._id);
+                  }}
+                />
+                <div className="gallery__overlay">
+                  <span className="gallery__view">View</span>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Pagination */}
-        <div className="gallery__pagination">
-          <button
-            className="gallery__pagination__button"
-            onClick={() => handlePageChange(currentPage - 1)}
-            disabled={currentPage === 1}
-          >
-            Previous
-          </button>
-          <div className="gallery__pagination__info">
-            <span className="gallery__pagination__current">
-              Page {currentPage} of {totalPages}
-            </span>
+        {totalPages > 1 && (
+          <div className="gallery__pagination">
+            <button
+              className="gallery__pagination__button"
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+            >
+              Previous
+            </button>
+            <div className="gallery__pagination__info">
+              <span className="gallery__pagination__current">
+                Page {currentPage} of {totalPages}
+              </span>
+            </div>
+            <button
+              className="gallery__pagination__button"
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+            >
+              Next
+            </button>
           </div>
-          <button
-            className="gallery__pagination__button"
-            onClick={() => handlePageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}
-          >
-            Next
-          </button>
-        </div>
+        )}
       </div>
 
       {/* Modal */}
@@ -139,7 +212,7 @@ const Gallery = () => {
               ×
             </button>
             <img
-              src={selectedImage.src}
+              src={urlFor(selectedImage.image).url()}
               alt={selectedImage.alt}
               className="gallery__modal__image"
             />

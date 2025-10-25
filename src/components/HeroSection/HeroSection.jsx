@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./HeroSection.css";
 import BookInspectionModal from "../BookInspectionModal/BookInspectionModal";
 
 const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // Trigger animations after component mounts
+    setIsLoaded(true);
+  }, []);
 
   const handleOpenModal = (e) => {
     e.preventDefault();
@@ -23,7 +29,11 @@ const HeroSection = () => {
   return (
     <section className="herosection__mainwrapper__background" id="home">
       <div className="herosection__overlay__dark"></div>
-      <div className="herosection__content__centered">
+      <div
+        className={`herosection__content__centered ${
+          isLoaded ? "animate" : ""
+        }`}
+      >
         <h1 className="herosection__title__main">
           Find Your Dream
           <br />

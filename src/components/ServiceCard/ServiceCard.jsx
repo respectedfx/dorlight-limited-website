@@ -1,9 +1,12 @@
 import React from "react";
 import "./ServiceCard.css";
 
-const ServiceCard = ({ image, title, description }) => {
+const ServiceCard = ({ image, title, description, index }) => {
   return (
-    <div className="servicecard__wrapper__container">
+    <div
+      className="servicecard__wrapper__container"
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
       <div className="servicecard__image__container">
         <img src={image} alt={title} className="servicecard__image" />
       </div>

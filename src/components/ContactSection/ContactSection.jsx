@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import "./ContactSection.css";
 import { FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
 const ContactSection = () => {
+  const [titleRef, titleVisible] = useScrollAnimation();
+  const [imageRef, imageVisible] = useScrollAnimation();
+  const [infoRef, infoVisible] = useScrollAnimation();
+  const [formRef, formVisible] = useScrollAnimation();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,14 +31,27 @@ const ContactSection = () => {
   return (
     <section className="contactsection__wrapper__main" id="contact">
       <div className="contactsection__container__content">
-        <h2 className="contactsection__title">Contact Us</h2>
+        <h2
+          ref={titleRef}
+          className={`contactsection__title ${titleVisible ? "animate" : ""}`}
+        >
+          Contact Us
+        </h2>
 
-        <div className="contactsection__image">
+        <div
+          ref={imageRef}
+          className={`contactsection__image ${imageVisible ? "animate" : ""}`}
+        >
           <img src="/assets/images/contact-us.jpg" alt="Contact Us" />
         </div>
 
         <div className="contactsection__grid__layout">
-          <div className="contactsection__info__block">
+          <div
+            ref={infoRef}
+            className={`contactsection__info__block ${
+              infoVisible ? "animate" : ""
+            }`}
+          >
             <div className="contactsection__info__item">
               <div className="contactsection__icon__wrapper">
                 <FaMapMarkerAlt color="#B70C1C" size={24} />
@@ -69,7 +88,11 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <form className="contactsection__form" onSubmit={handleSubmit}>
+          <form
+            ref={formRef}
+            className={`contactsection__form ${formVisible ? "animate" : ""}`}
+            onSubmit={handleSubmit}
+          >
             <div className="contactsection__form__row">
               <div className="contactsection__form__group">
                 <input

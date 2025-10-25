@@ -1,8 +1,12 @@
 import React from "react";
 import "./ServicesSection.css";
 import ServiceCard from "../ServiceCard/ServiceCard";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
 const ServicesSection = () => {
+  const [headerRef, headerVisible] = useScrollAnimation();
+  const [gridRef, gridVisible] = useScrollAnimation();
+
   const services = [
     {
       image: "/assets/services/property-development.png",
@@ -42,23 +46,25 @@ const ServicesSection = () => {
     },
   ];
 
-  const stats = [
-    { number: "360+", label: "Happy Clients" },
-    { number: "100+", label: "Projects Done" },
-    { number: "50+", label: "Awards Won" },
-    { number: "20+", label: "Years of Experience" },
-  ];
-
   return (
     <section className="servicessection__wrapper__main" id="services">
       <div className="servicessection__container__content">
-        <div className="servicessection__header">
+        <div
+          ref={headerRef}
+          className={`servicessection__header ${
+            headerVisible ? "animate" : ""
+          }`}
+        >
           <h2 className="servicessection__subtitle">Our Services</h2>
         </div>
-
-        <div className="servicessection__grid__cards">
+        <div
+          ref={gridRef}
+          className={`servicessection__grid__cards ${
+            gridVisible ? "animate" : ""
+          }`}
+        >
           {services.map((service, index) => (
-            <ServiceCard key={index} {...service} />
+            <ServiceCard key={index} index={index} {...service} />
           ))}
         </div>
       </div>

@@ -110,6 +110,18 @@
   font-weight: 600;
 }
 
+.project-card {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 768px) {
   .projectcard__image__wrapper {
     height: 250px;
