@@ -1,9 +1,9 @@
 import React from "react";
 import "./ProjectCard.css";
 
-const ProjectCard = ({ image, title, subtitle }) => {
+const ProjectCard = ({ image, title, subtitle, index }) => {
   return (
-    <div className="project-card">
+    <div className="project-card" style={{ animationDelay: `${index * 0.1}s` }}>
       <div className="project-card__image">
         <img src={image} alt={title} />
         <div className="project-card__overlay">

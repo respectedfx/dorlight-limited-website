@@ -1,14 +1,35 @@
 import React from "react";
 import "./AboutSection.css";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
 const AboutSection = () => {
+  const [welcomeRef, welcomeVisible] = useScrollAnimation();
+  const [imageRef, imageVisible] = useScrollAnimation();
+  const [contentRef, contentVisible] = useScrollAnimation();
+  const [visionRef, visionVisible] = useScrollAnimation();
+  const [missionRef, missionVisible] = useScrollAnimation();
+  const [coreValuesRef, coreValuesVisible] = useScrollAnimation();
+  const [quoteRef, quoteVisible] = useScrollAnimation();
+
   return (
     <section className="aboutsection__wrapper__main" id="about">
       <div className="aboutsection__container__content">
-        <h2 className="aboutsection__heading__welcome">Welcome Home</h2>
+        <h2
+          ref={welcomeRef}
+          className={`aboutsection__heading__welcome ${
+            welcomeVisible ? "animate" : ""
+          }`}
+        >
+          Welcome Home
+        </h2>
 
         <div className="aboutsection__grid__twocolumn">
-          <div className="aboutsection__image__container">
+          <div
+            ref={imageRef}
+            className={`aboutsection__image__container ${
+              imageVisible ? "animate" : ""
+            }`}
+          >
             <img
               src="/assets/about_us_img.jpg"
               alt="Modern building architecture"
@@ -16,7 +37,12 @@ const AboutSection = () => {
             />
           </div>
 
-          <div className="aboutsection__content__textblock">
+          <div
+            ref={contentRef}
+            className={`aboutsection__content__textblock ${
+              contentVisible ? "animate" : ""
+            }`}
+          >
             <h3 className="aboutsection__title__aboutus">About Us</h3>
             <p className="aboutsection__paragraph__description">
               At Dorlight Limited, we are committed to redefining real estate in
@@ -37,7 +63,12 @@ const AboutSection = () => {
           </div>
         </div>
 
-        <div className="aboutsection__vision__block">
+        <div
+          ref={visionRef}
+          className={`aboutsection__vision__block ${
+            visionVisible ? "animate" : ""
+          }`}
+        >
           <h4 className="aboutsection__subtitle__vision">Our Vision</h4>
           <p className="aboutsection__text__visionmission">
             To emerge the gap between modern living and community while
@@ -45,7 +76,12 @@ const AboutSection = () => {
           </p>
         </div>
 
-        <div className="aboutsection__mission__block">
+        <div
+          ref={missionRef}
+          className={`aboutsection__mission__block ${
+            missionVisible ? "animate" : ""
+          }`}
+        >
           <h4 className="aboutsection__subtitle__mission">Our Mission</h4>
           <p className="aboutsection__text__visionmission">
             We are committed to empowering our clients with transparency and
@@ -60,7 +96,12 @@ const AboutSection = () => {
       <div className="aboutsection__corevalues__section">
         <div className="aboutsection__corevalues__bg">
           <div className="aboutsection__corevalues__overlay"></div>
-          <div className="aboutsection__corevalues__content">
+          <div
+            ref={coreValuesRef}
+            className={`aboutsection__corevalues__content ${
+              coreValuesVisible ? "animate" : ""
+            }`}
+          >
             <h3 className="aboutsection__corevalues__title">Our Core Values</h3>
             <div className="aboutsection__corevalues__list">
               <span className="aboutsection__corevalue__item">
@@ -88,7 +129,12 @@ const AboutSection = () => {
       </div>
 
       {/* Quote Section */}
-      <div className="aboutsection__quote__section">
+      <div
+        ref={quoteRef}
+        className={`aboutsection__quote__section ${
+          quoteVisible ? "animate" : ""
+        }`}
+      >
         <div className="aboutsection__quote__grid">
           <div className="aboutsection__quote__image">
             <img

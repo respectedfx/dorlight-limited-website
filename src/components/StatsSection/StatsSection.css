@@ -16,6 +16,10 @@
   justify-items: center;
 }
 
+.stats-section__grid.animate .stat-card {
+  animation: scaleIn 0.6s ease forwards;
+}
+
 @media (max-width: 968px) {
   .statssection__grid__stats {
     grid-template-columns: repeat(2, 1fr);

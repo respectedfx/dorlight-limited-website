@@ -1,8 +1,12 @@
 import React from "react";
 import "./ProjectsSection.css";
 import ProjectCard from "../ProjectCard/ProjectCard";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
 const ProjectsSection = () => {
+  const [headerRef, headerVisible] = useScrollAnimation();
+  const [gridRef, gridVisible] = useScrollAnimation();
+
   const projects = [
     {
       image: "/assets/images/sterling-groove.jpg",
@@ -29,7 +33,12 @@ const ProjectsSection = () => {
   return (
     <section className="projects-section" id="projects">
       <div className="projects-section__container">
-        <div className="projects-section__header">
+        <div
+          ref={headerRef}
+          className={`projects-section__header ${
+            headerVisible ? "animate" : ""
+          }`}
+        >
           <h2 className="projects-section__title">Our Projects</h2>
           <h3 className="projects-section__subtitle">
             Tech-Embedded Buildings
@@ -40,10 +49,12 @@ const ProjectsSection = () => {
             to luxurious penthouses and villas.
           </p>
         </div>
-
-        <div className="projects-section__grid">
+        <div
+          ref={gridRef}
+          className={`projects-section__grid ${gridVisible ? "animate" : ""}`}
+        >
           {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+            <ProjectCard key={index} index={index} {...project} />
           ))}
         </div>
       </div>
