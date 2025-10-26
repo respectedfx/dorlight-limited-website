@@ -59,7 +59,21 @@ const ContactSection = () => {
               <div className="contactsection__info__content">
                 <h4 className="contactsection__info__label">Head Office:</h4>
                 <p className="contactsection__info__text">
-                  xxxxxxxxxx xxxxxxxxxxxxx xxxxxxxxxxxxxxx, Delta State.
+                  No. 4 Efeakpokrire Street, off Oteri Road, Ughelli, Delta
+                  State, Nigeria
+                </p>
+              </div>
+            </div>
+
+            <div className="contactsection__info__item">
+              <div className="contactsection__icon__wrapper">
+                <FaMapMarkerAlt color="#B70C1C" size={24} />
+              </div>
+              <div className="contactsection__info__content">
+                <h4 className="contactsection__info__label">Branch Office:</h4>
+                <p className="contactsection__info__text">
+                  Road 4, Suite H415/416, Ikota Shopping Complex, VGC-Ajah,
+                  Lagos, Nigeria
                 </p>
               </div>
             </div>
@@ -71,7 +85,7 @@ const ContactSection = () => {
               <div className="contactsection__info__content">
                 <h4 className="contactsection__info__label">Email:</h4>
                 <p className="contactsection__info__text">
-                  xxxxxxxxxx@gmail.com xxxxxxxxx@gmail.com.
+                  dorlightventures@gmail.com
                 </p>
               </div>
             </div>
@@ -81,9 +95,8 @@ const ContactSection = () => {
                 <FaPhone color="#B70C1C" size={24} />
               </div>
               <div className="contactsection__info__content">
-                <h4 className="contactsection__info__label">Call:</h4>
-                <p className="contactsection__info__text">+234 900 900 9000</p>
-                <p className="contactsection__info__text">+234 800 800 8000</p>
+                <h4 className="contactsection__info__label">Phone:</h4>
+                <p className="contactsection__info__text">+234 703 987 8884</p>
               </div>
             </div>
           </div>

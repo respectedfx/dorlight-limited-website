@@ -11,7 +11,7 @@
 
 .servicessection__header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -30,10 +30,122 @@
   animation: fadeInDown 0.6s ease forwards;
 }
 
+/* Introduction Section */
+.servicessection__intro {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.servicessection__intro.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.servicessection__intro__text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+  margin: 0;
+}
+
+.servicessection__intro__text strong {
+  color: #333;
+  font-weight: 600;
+}
+
+/* Services Grid */
 .servicessection__grid__cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
+  margin-bottom: 80px;
+}
+
+/* Why Choose Section */
+.servicessection__why__choose {
+  max-width: 1000px;
+  margin: 0 auto 60px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.servicessection__why__choose.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.servicessection__why__title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin: 0 0 40px 0;
+}
+
+.servicessection__why__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.servicessection__why__item {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicessection__why__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.servicessection__why__item__title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #b70c1c;
+  margin: 0 0 12px 0;
+}
+
+.servicessection__why__item__text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+}
+
+.servicessection__why__item__text strong {
+  color: #333;
+  font-weight: 600;
+}
+
+/* Closing Section */
+.servicessection__closing {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 30px;
+  background-color: #fef8f9;
+  border-radius: 12px;
+  border: 1px solid #ffdee5;
+}
+
+.servicessection__closing__text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+  margin: 0;
+}
+
+.servicessection__closing__text strong {
+  color: #b70c1c;
+  font-weight: 600;
 }
 
 /* Animation */
@@ -64,6 +176,10 @@
   .servicessection__grid__cards {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .servicessection__why__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
@@ -76,15 +192,53 @@
   }
 
   .servicessection__header {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 
   .servicessection__subtitle {
     font-size: 36px;
   }
 
+  .servicessection__intro {
+    margin-bottom: 40px;
+  }
+
+  .servicessection__intro__text {
+    font-size: 15px;
+  }
+
   .servicessection__grid__cards {
     gap: 25px;
+    margin-bottom: 60px;
+  }
+
+  .servicessection__why__title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .servicessection__why__grid {
+    gap: 25px;
+  }
+
+  .servicessection__why__item {
+    padding: 25px 15px;
+  }
+
+  .servicessection__why__item__title {
+    font-size: 18px;
+  }
+
+  .servicessection__why__item__text {
+    font-size: 14px;
+  }
+
+  .servicessection__closing {
+    padding: 30px 20px;
+  }
+
+  .servicessection__closing__text {
+    font-size: 15px;
   }
 }
 
@@ -95,5 +249,19 @@
 
   .servicessection__subtitle {
     font-size: 32px;
+  }
+
+  .servicessection__why__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .servicessection__why__title {
+    font-size: 24px;
+  }
+
+  .servicessection__intro__text,
+  .servicessection__closing__text {
+    font-size: 14px;
   }
 }
