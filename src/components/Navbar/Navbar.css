@@ -1,12 +1,26 @@
 .navbar__maincontainer__wrapper {
+  z-index: 1000;
+  padding: 0 40px;
+  transition: all 0.3s ease;
+}
+
+/* Absolute positioning for homepage (transparent overlay) */
+.navbar--absolute {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   background-color: transparent;
-  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
-  z-index: 1000;
-  padding: 0 40px;
+}
+
+/* Fixed positioning for other pages (solid background) */
+.navbar--fixed {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #284c65;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navbar__content__container {
@@ -23,6 +37,8 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .navbar__logo__icon {
@@ -83,34 +99,7 @@
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: #002b5b;
-}
-
-@media (max-width: 768px) {
-  .navbar__mobile__toggle {
-    display: block;
-  }
-
-  .navbar__menu__list {
-    display: none;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    right: 0;
-    background-color: white;
-    flex-direction: column;
-    padding: 20px;
-    gap: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .navbar__menu__open {
-    display: flex;
-  }
-
-  .navbar__btn__contact {
-    width: fit-content;
-  }
+  color: white;
 }
 
 .navbar__contact__button {
@@ -130,6 +119,10 @@
 }
 
 @media (max-width: 968px) {
+  .navbar__maincontainer__wrapper {
+    padding: 0 20px;
+  }
+
   .navbar__mobile__toggle {
     display: block;
   }
@@ -139,13 +132,14 @@
     top: 80px;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(139, 0, 0, 0.98);
     flex-direction: column;
     gap: 0;
     padding: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     transform: translateX(-100%);
     transition: transform 0.3s ease;
+    backdrop-filter: blur(10px);
   }
 
   .navbar__menu__open {
@@ -153,11 +147,36 @@
   }
 
   .navbar__menuitem__element {
+    width: 100%;
     padding: 15px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
+  .navbar__menuitem__element:last-child {
+    border-bottom: none;
+  }
+
+  .navbar__link__item {
+    display: block;
+    width: 100%;
+  }
+
   .navbar__contact__button {
     display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar__content__container {
+    padding: 0 10px;
+  }
+
+  .navbar__logo__text {
+    font-size: 18px;
+  }
+
+  .navbar__logo__icon {
+    width: 40px;
+    height: 40px;
   }
 }

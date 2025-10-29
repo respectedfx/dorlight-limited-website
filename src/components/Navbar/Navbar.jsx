@@ -1,17 +1,19 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const handleSectionClick = (sectionId) => {
     if (location.pathname !== "/") {
-      // If not on home page, navigate to home first
-      window.location.href = `/#${sectionId}`;
+      // Store target section for when the homepage loads
+      sessionStorage.setItem("scrollTarget", sectionId);
+      navigate("/");
     } else {
-      // If on home page, just scroll to section
+      // Already on home, just scroll immediately
       const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
@@ -24,15 +26,27 @@ const Navbar = () => {
     return location.pathname === path ? "navbar__link__active" : "";
   };
 
+  // Check if we're on homepage
+  const isHomePage = location.pathname === "/";
+  const isGalleryPage = location.pathname === "/gallery";
+
   return (
-    <nav className="navbar__maincontainer__wrapper">
+    <nav
+      className={`navbar__maincontainer__wrapper ${
+        isHomePage
+          ? "navbar--absolute"
+          : isGalleryPage
+          ? "navbar--absolute"
+          : "navbar--fixed"
+      }`}
+    >
       <div className="navbar__content__container">
-        <div className="navbar__logo__section">
+        <Link to="/" className="navbar__logo__section">
           <div className="navbar__logo__icon">
-            <img src="/assets/dorlight.jpg" alt="" />
+            <img src="/assets/dorlight.jpg" alt="DORLIGHT logo" />
           </div>
           <span className="navbar__logo__text">DORLIGHT</span>
-        </div>
+        </Link>
 
         <button
           className="navbar__mobile__toggle"
@@ -47,7 +61,11 @@ const Navbar = () => {
           }`}
         >
           <li className="navbar__menuitem__element">
-            <Link to="/" className={`navbar__link__item ${isActive("/")}`}>
+            <Link
+              to="/"
+              className={`navbar__link__item ${isActive("/")}`}
+              onClick={() => setIsMenuOpen(false)}
+            >
               Home
             </Link>
           </li>
@@ -69,15 +87,30 @@ const Navbar = () => {
           </li>
           <li className="navbar__menuitem__element">
             <Link
+              to="/properties"
+              className={`navbar__link__item ${isActive("/properties")}`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Properties
+            </Link>
+          </li>
+          <li className="navbar__menuitem__element">
+            <Link
               to="/gallery"
               className={`navbar__link__item ${isActive("/gallery")}`}
+              onClick={() => setIsMenuOpen(false)}
             >
               Gallery
             </Link>
           </li>
         </ul>
 
-        <button className="navbar__contact__button">Contact</button>
+        <a
+          className="navbar__contact__button"
+          onClick={() => handleSectionClick("contact")}
+        >
+          Contact
+        </a>
       </div>
     </nav>
   );
