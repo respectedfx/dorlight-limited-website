@@ -40,8 +40,8 @@ const HeroSection = () => {
           House By Us
         </h1>
         <p className="herosection__title__subtitle">
-          We provide a complete service for the sale, purchase or rental real
-          estate.
+          We provide a complete service for the Sale and Purchase of Real
+          Estate.
         </p>
         <div className="herosection__buttons__container">
           <a

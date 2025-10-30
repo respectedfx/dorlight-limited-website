@@ -47,18 +47,17 @@ const AboutSection = () => {
           >
             <h3 className="aboutsection__title__aboutus">About Us</h3>
             <p className="aboutsection__paragraph__description">
-              Welcome to <strong>Dorlight Limited</strong>, where your real
-              estate aspirations become reality. With a commitment to integrity,
-              professionalism, and client-centric service, we deliver tailored
-              solutions to meet your unique needs. Under the visionary
-              leadership of our Chairman, <strong>Rev. Dorcas Edoja</strong>, we
-              are redefining real estate in Nigeria through innovation, quality,
-              and trust.
+              At <strong>Dorlight Limited</strong>, we are committed to
+              redefining real estate in Nigeria by delivering sustainable,
+              innovative and customer-focused property solutions. Established
+              with a vision to bridge the gap between modern living and
+              affordability, we specialize in property development, sales,
+              leasing, and real estate investment advisory services.
             </p>
             <p className="aboutsection__paragraph__description">
               Our team combines deep industry expertise with a passion for
               excellence, ensuring that every project we undertake meets the
-              highest standards of quality, transparency, and value. From
+              highest standards of quality, transparency and value. From
               residential estates to commercial developments, we design and
               deliver properties that reflect functionality, comfort, and
               long-term investment potential.
