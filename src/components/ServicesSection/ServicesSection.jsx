@@ -7,7 +7,7 @@ const ServicesSection = () => {
   const [headerRef, headerVisible] = useScrollAnimation();
   const [introRef, introVisible] = useScrollAnimation();
   const [gridRef, gridVisible] = useScrollAnimation();
-  const [whyChooseRef, whyChooseVisible] = useScrollAnimation();
+  const [closingRef, closingVisible] = useScrollAnimation();
 
   const services = [
     {
@@ -69,9 +69,9 @@ const ServicesSection = () => {
         </div>
 
         <div
-          ref={whyChooseRef}
+          ref={closingRef}
           className={`servicessection__why__choose ${
-            whyChooseVisible ? "animate" : ""
+            closingVisible ? "animate" : ""
           }`}
         >
           <h3 className="servicessection__why__title">

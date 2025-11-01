@@ -9,24 +9,22 @@ const ProjectsSection = () => {
 
   const projects = [
     {
-      image: "/assets/images/sterling-groove.jpg",
-      title: "The Sterling Groove",
-      subtitle: "4-Bedroom Terrace",
+      image: "/assets/images/ernest-estate.jpg",
+      title: "Ernest Estate",
+      subtitle:
+        "A fast-growing residential community ideal for family living and long-term appreciation.",
     },
     {
-      image: "/assets/images/marquis-court.jpg",
-      title: "The Marquis Court",
-      subtitle: "4-Bedroom Terrace",
+      image: "/assets/images/favour-estate.jpg",
+      title: "Favour Estate",
+      subtitle:
+        "Designed for smart investors and home seekers who value security, serenity, and accessibility.",
     },
     {
-      image: "/assets/images/arden-place.jpg",
-      title: "Arden Place",
-      subtitle: "4-Bedroom Terrace",
-    },
-    {
-      image: "/assets/images/aqua-vista-residences.jpg",
-      title: "Aqua Vista Residences",
-      subtitle: "4-Bedroom Terrace",
+      image: "/assets/images/primeville-estate.jpg",
+      title: "PrimeVille Estate",
+      subtitle:
+        "Perfect for forward-thinking buyers seeking affordable land in a promising location with excellent growth potential and verified documentation.",
     },
   ];
 
@@ -41,12 +39,14 @@ const ProjectsSection = () => {
         >
           <h2 className="projects-section__title">Our Projects</h2>
           <h3 className="projects-section__subtitle">
-            Tech-Embedded Buildings
+            Featured Estates and Developments
           </h3>
           <p className="projects-section__description">
-            Every home we deliver represents the perfect blend of contemporary
-            design and long-term value. From stylish apartments and townhouses
-            to luxurious penthouses and villas.
+            Every project by Dorlight Limited reflects our dedication to
+            authenticity, excellence, and sustainable value creation. We
+            specialize in residential estates, investment-ready lands, and
+            strategically located plots designed for both living and long-term
+            investment.
           </p>
         </div>
         <div

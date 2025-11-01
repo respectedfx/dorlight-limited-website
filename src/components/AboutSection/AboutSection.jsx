@@ -47,20 +47,31 @@ const AboutSection = () => {
           >
             <h3 className="aboutsection__title__aboutus">About Us</h3>
             <p className="aboutsection__paragraph__description">
-              At <strong>Dorlight Limited</strong>, we are committed to
-              redefining real estate in Nigeria by delivering sustainable,
-              innovative and customer-focused property solutions. Established
-              with a vision to bridge the gap between modern living and
-              affordability, we specialize in property development, sales,
-              leasing, and real estate investment advisory services.
+              <strong>Dorlight Limited</strong> is a dynamic and innovative real
+              estate company in Nigeria, dedicated to making property ownership
+              accessible, transparent, and profitable. With a strong presence in
+              both Lagos and Delta State, we connect aspiring homeowners,
+              investors, and developers to genuine, verified, and high-value
+              real estate opportunities across the country.
             </p>
             <p className="aboutsection__paragraph__description">
-              Our team combines deep industry expertise with a passion for
-              excellence, ensuring that every project we undertake meets the
-              highest standards of quality, transparency and value. From
-              residential estates to commercial developments, we design and
-              deliver properties that reflect functionality, comfort, and
-              long-term investment potential.
+              Founded with the vision to redefine how Nigerians buy and invest
+              in land, Dorlight Limited focuses on trust, integrity, and
+              professionalism. These qualities have helped us stand out in the
+              competitive real estate markets of Abuja, Warri, Delta, Ughelli,
+              Asaba, and Lagos. Our team works tirelessly to simplify the
+              process of property acquisition, ensuring that every client enjoys
+              a seamless experience backed by clear documentation, expert
+              guidance, and long-term value.
+            </p>
+            <p className="aboutsection__paragraph__description">
+              At Dorlight, we understand that buying land or a home is more than
+              a transaction; it's a life decision. That's why we ensure that
+              every property we sell is authentic, properly documented and
+              strategically located to yield long-term appreciation. Whether
+              you're looking for residential plots in Ughelli, investment land
+              in Asaba, or luxury estates in Lagos, we offer real estate
+              solutions that fit your needs and budget.
             </p>
           </div>
         </div>
@@ -73,8 +84,11 @@ const AboutSection = () => {
         >
           <h4 className="aboutsection__subtitle__vision">Our Vision</h4>
           <p className="aboutsection__text__visionmission">
-            To emerge the gap between modern living and community while
-            providing remarkable value through premium real estate development.
+            To become one of Nigeria's most trusted and respected real estate
+            companies, delivering secure, affordable, and high-value property
+            ownership opportunities that empower individuals, families, and
+            communities to build lasting financial stability and generational
+            wealth.
           </p>
         </div>
 
@@ -86,10 +100,15 @@ const AboutSection = () => {
         >
           <h4 className="aboutsection__subtitle__mission">Our Mission</h4>
           <p className="aboutsection__text__visionmission">
-            We are committed to empowering our clients with transparency and
-            integrity, ensuring they enjoy the best property development. Our
-            goal is to go beyond standards, build trust, and make the dream of
-            owning beautiful real estate a reality for all.
+            Our mission is to make real estate ownership simple, transparent and
+            rewarding for Nigerians at home and abroad. We achieve this by
+            offering verified and affordable properties in Delta State (Ughelli,
+            Asaba, Warri), Abuja, and Lagos (Ajah, Lekki, VGC). We also provide
+            professional consultation and guidance from inquiry to documentation
+            while upholding integrity, trust, and transparency in every
+            transaction. Through exceptional service and consistent value
+            delivery, we help homeowners and investors make confident, informed
+            property decisions.
           </p>
         </div>
       </div>
@@ -106,24 +125,22 @@ const AboutSection = () => {
           >
             <h3 className="aboutsection__corevalues__title">Our Core Values</h3>
             <div className="aboutsection__corevalues__list">
+              <span className="aboutsection__corevalue__item">Integrity</span>
+              <span className="aboutsection__corevalue__divider">|</span>
               <span className="aboutsection__corevalue__item">
-                I — Integrity
+                Customer Commitment
+              </span>
+              <span className="aboutsection__corevalue__divider">|</span>
+              <span className="aboutsection__corevalue__item">Excellence</span>
+              <span className="aboutsection__corevalue__divider">|</span>
+              <span className="aboutsection__corevalue__item">Innovation</span>
+              <span className="aboutsection__corevalue__divider">|</span>
+              <span className="aboutsection__corevalue__item">
+                Accountability
               </span>
               <span className="aboutsection__corevalue__divider">|</span>
               <span className="aboutsection__corevalue__item">
-                P — Professionalism
-              </span>
-              <span className="aboutsection__corevalue__divider">|</span>
-              <span className="aboutsection__corevalue__item">
-                E — Excellence
-              </span>
-              <span className="aboutsection__corevalue__divider">|</span>
-              <span className="aboutsection__corevalue__item">
-                A — Accountability
-              </span>
-              <span className="aboutsection__corevalue__divider">|</span>
-              <span className="aboutsection__corevalue__item">
-                S — Sustainability
+                Growth Mindset
               </span>
             </div>
           </div>
