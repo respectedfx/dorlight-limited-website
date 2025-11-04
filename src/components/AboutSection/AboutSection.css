@@ -1,6 +1,7 @@
 .aboutsection__wrapper__main {
   padding: 40px 0;
   background-color: #fff;
+  overflow-x: hidden;
 }
 
 .aboutsection__container__content {
