@@ -1,13 +1,15 @@
 .footer__wrapper__main {
   background-color: #ffffff;
-  color: #333;
-  padding: 40px 0 16px;
+  color: #222;
+  padding: 60px 0 24px;
+  font-family: inherit;
 }
 
+/* CONTAINER & GRID */
 .footer__container__content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 24px;
 }
 
 .footer__grid__sections {
@@ -17,13 +19,13 @@
   margin-bottom: 40px;
 }
 
-/* Brand Block with Animation */
+/* BRAND BLOCK */
 .footer__brand__block {
   display: flex;
   flex-direction: column;
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
 }
 
 .footer__brand__block.animate {
@@ -39,21 +41,21 @@
 .footer__logo {
   height: 150px;
   width: auto;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease-in-out;
 }
 
 .footer__logo:hover {
   transform: scale(1.05);
 }
 
-/* Links Columns with Staggered Animation */
+/* LINKS COLUMNS */
 .footer__links__column {
   display: flex;
   flex-direction: column;
   gap: 20px;
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
 }
 
 .footer__links__column:nth-child(2) {
@@ -74,10 +76,12 @@
 }
 
 .footer__heading__title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   color: #000;
   margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   position: relative;
   padding-bottom: 8px;
 }
@@ -97,9 +101,9 @@
 }
 
 .footer__heading__subtitle {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
-  color: #000;
+  color: #111;
   margin: 0;
 }
 
@@ -109,7 +113,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .footer__listitem__element {
@@ -117,13 +121,14 @@
   align-items: flex-start;
   gap: 12px;
   margin: 0;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease-in-out;
 }
 
 .footer__listitem__element:hover {
   transform: translateX(5px);
 }
 
+/* ICONS */
 .footer__icon {
   color: #002b5b;
   font-size: 16px;
@@ -132,48 +137,36 @@
 }
 
 .footer__listitem__element:hover .footer__icon {
-  color: #b70c1c;
-  transform: scale(1.2);
+  color: #c41e3a;
+  transform: scale(1.15);
 }
 
 .footer__contact__text {
   font-size: 14px;
-  color: #666;
-  line-height: 1.5;
-}
-
-.footer__description__text {
-  font-size: 14px;
+  color: #555;
   line-height: 1.6;
-  color: black;
-  margin: 0;
-}
-
-.footer__contact__block {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
 }
 
 .footer__link__text {
   text-decoration: none;
-  color: black;
+  color: #222;
   font-size: 14px;
+  position: relative;
   transition: color 0.3s ease, padding-left 0.3s ease;
   cursor: pointer;
-  position: relative;
 }
 
 .footer__link__text::before {
   content: "";
   position: absolute;
-  left: -15px;
+  left: -12px;
   top: 50%;
   transform: translateY(-50%);
-  width: 0;
+  width: 8px;
   height: 2px;
   background-color: #c41e3a;
-  transition: width 0.3s ease;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .footer__link__text:hover {
@@ -182,23 +175,32 @@
 }
 
 .footer__link__text:hover::before {
-  width: 10px;
+  opacity: 1;
 }
 
+/*  CONTACT BLOCKS  */
+.footer__contact__block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/*  BOTTOM BAR  */
 .footer__bottom__bar {
-  padding: 30px 0;
+  padding: 24px 0;
   text-align: center;
-  background: #d9d9d980;
+  background: #f7f7f7;
   animation: fadeIn 1s ease 0.4s both;
 }
 
 .footer__copyright__text {
-  font-size: 14px;
-  color: #999;
+  font-size: 13px;
+  color: #555;
   margin: 0;
+  letter-spacing: 0.3px;
 }
 
-/* Animation Keyframes */
+/* ANIMATIONS */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -208,21 +210,35 @@
   }
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 968px) {
   .footer__grid__sections {
     grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
   }
 }
 
 @media (max-width: 640px) {
   .footer__grid__sections {
     grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer__container__content {
+    padding: 0 20px;
   }
 
   .footer__links__column:nth-child(2),
   .footer__links__column:nth-child(3),
   .footer__links__column:nth-child(4) {
     transition-delay: 0s;
+  }
+
+  .footer__heading__title {
+    font-size: 17px;
+  }
+
+  .footer__logo {
+    height: 120px;
   }
 }

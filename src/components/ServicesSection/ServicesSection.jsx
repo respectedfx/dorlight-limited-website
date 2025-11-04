@@ -52,7 +52,7 @@ const ServicesSection = () => {
             professionalism, and client-centric service, we deliver tailored
             solutions to meet your unique needs. Under the visionary leadership
             of our Chairman, <strong>Rev. Dorcas Edoja</strong>, we are
-            redefining real estate in Nigeria through innovation, quality, and
+            redefining real estate in Nigeria through innovation, quality and
             trust.
           </p>
         </div>

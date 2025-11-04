@@ -135,6 +135,16 @@ const Footer = () => {
               <ul className="footer__list__items">
                 <li className="footer__listitem__element">
                   <a
+                    href="https://wa.me/2347039878884?text=Hello%20Dorlight%2C%20I%27d%20like%20to%20make%20an%20inquiry."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer__link__text"
+                  >
+                    WhatsApp
+                  </a>
+                </li>
+                <li className="footer__listitem__element">
+                  <a
                     href="https://x.com/Dorlightlimited"
                     target="_blank"
                     rel="noopener noreferrer"
