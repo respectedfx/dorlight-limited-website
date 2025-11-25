@@ -52,7 +52,7 @@ const Footer = () => {
                 <li className="footer__listitem__element">
                   <FaMapMarkerAlt className="footer__icon" />
                   <span className="footer__contact__text">
-                    No. 4 Efeakpokrire Street, off Oteri Road, Ughelli, Delta
+                    No. 2 Oteri New Road off Isodje junction, Ughelli, Delta
                     State, Nigeria
                   </span>
                 </li>

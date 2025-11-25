@@ -59,7 +59,7 @@ const ContactSection = () => {
               <div className="contactsection__info__content">
                 <h4 className="contactsection__info__label">Head Office:</h4>
                 <p className="contactsection__info__text">
-                  No. 4 Efeakpokrire Street, off Oteri Road, Ughelli, Delta
+                  No. 2 Oteri New Road off Isodje junction, Ughelli, Delta
                   State, Nigeria
                 </p>
               </div>
